@@ -22,9 +22,9 @@ class StorePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['bail', 'required', ['string'], 'max:250'],
-            'overview' => ['string', 'max:250'],
-            'content' => ['bail', 'required', 'string', 'max:250']
+            'title' => ['bail', 'required', ['string'], 'min:4', 'min:4', 'max:250'],
+            'overview' => ['string', 'min:4','max:250'],
+            'content' => ['bail', 'required', 'string', 'min:4']
         ];
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Post;
+namespace App\Http\Requests\Tag;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePostRequest extends FormRequest
+class UpdateTagRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,7 @@ class UpdatePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['string', 'min:4', 'max:250'],
-            'overview' => ['string', 'min:4', 'max:250'],
-            'content' => ['string']
+            'name' => ['bail', 'string', 'min:4', 'max:15']
         ];
     }
 }

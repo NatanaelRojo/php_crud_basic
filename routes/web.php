@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TagController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -20,6 +21,7 @@ use Inertia\Inertia;
 Route::view('/home', 'home');
 
 Route::resource('posts', PostController::class);
+Route::resource('tag', TagController::class);
 
 
 
