@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TagController;
@@ -22,6 +23,7 @@ Route::view('/home', 'home');
 
 Route::resource('posts', PostController::class);
 Route::resource('tag', TagController::class);
+Route::resource('category', CategoryController::class);
 
 
 

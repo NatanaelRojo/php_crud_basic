@@ -6,7 +6,7 @@
     <a href="{{route('tag.index') }}">
         Tags
     </a>
-    <a href="$">
+    <a href="{{ route('category.index') }}">
         Categories
     </a>
 </header>

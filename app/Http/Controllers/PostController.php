@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Post\StorePostRequest;
 use App\Http\Requests\Post\UpdatePostRequest;
+use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -25,7 +27,9 @@ class PostController extends Controller
      */
     public function create(): View
     {
-        return view('post.create');
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('post.create', compact('categories', 'tags'));
     }
 
     /**
@@ -35,6 +39,10 @@ class PostController extends Controller
     {
         $validated = $request->validated();
         $newPost = Post::create($validated);
+
+        if ($request->has('tags')) {
+            $newPost->tags()->attach($request->input('tags'));
+        }
         return redirect(route('posts.index'));
     }
 
