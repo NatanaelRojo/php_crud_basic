@@ -13,4 +13,20 @@
 @foreach ($post->tags as $tag)
     <p>{{ $tag->name }}</p>
 @endforeach
+<h1>Add a comment</h1>
+<form method="POST" action="{{ route('comment.store') }}">
+    @csrf
+    <input type="hidden" name="post_id" value="{{ $post->id }}"">
+    <label for="content">Comment: </label>
+    <input type="text" name="content" id="content">
+    <input type="submit" value="Comment">
+</form>
+<h2>Comments</h2>
+@forelse($post->comments as $comment)
+    <div>
+        <p>{{ $comment->content }}</p>
+    </div>
+@empty
+    <p>No comments</p>
+@endforelse
 @endsection
