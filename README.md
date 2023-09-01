@@ -7,6 +7,7 @@ This is a basic crud aplication. This aplication stores a blog post logic to cre
 ## How to use
 
 For using purposes, you must have your database enviroment variables set. In .env.example, you have an example.
+
 To install all dependencies run the following command within the project folder:
 composer install
 Next, run all migrations with the following command:
