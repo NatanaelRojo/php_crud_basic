@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TagController;
@@ -26,6 +27,7 @@ Route::resource('posts', PostController::class);
 Route::resource('tag', TagController::class);
 Route::resource('category', CategoryController::class);
 Route::resource('comment', CommentController::class);
+Route::resource('employee', EmployeeController::class);
 
 
 

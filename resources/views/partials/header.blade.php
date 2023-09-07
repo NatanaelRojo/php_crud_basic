@@ -9,4 +9,7 @@
     <a href="{{ route('category.index') }}">
         Categories
     </a>
+    <a href="{{ route('employee.index') }}">
+        Employees
+    </a>
 </header>
